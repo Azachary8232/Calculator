@@ -23,11 +23,34 @@ public class Calculator implements java.io.Serializable{
 	
 //	METHODS
 	public void performOperation(double operandOne, String operation, double operandTwo) {
-		if( operation == "+") {
+		setResults(0);
+		if( operation.equals("+")) {
 			setResults(operandOne + operandTwo);
 		}
-		else {
+		else if ( operation.equals("-")) {
 			setResults(operandOne - operandTwo);
+		}
+		else if ( operation.equals("*")) {
+			setResults(operandOne * operandTwo);
+		}
+		else {
+			setResults(operandOne / operandTwo);
+		}
+		System.out.println(getResults());
+	}
+	
+	public void nextOperand(String operation, double value) {
+		if( operation.equals("+")) {
+			setResults(results += value);
+		}
+		else if ( operation.equals("-")) {
+			setResults(results -= value);
+		}
+		else if ( operation.equals("*")) {
+			setResults(results *= value);
+		}
+		else {
+			setResults(results /= value);
 		}
 		System.out.println(getResults());
 	}

@@ -6,7 +6,7 @@ public class CalculatorTest {
 		
 		
 		Calculator operation1 = new Calculator(10.5, "+", 5.2);
-		
+		operation1.nextOperand("*", 10);
 		
 		
 	}
